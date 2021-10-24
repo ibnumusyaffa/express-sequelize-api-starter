@@ -19,28 +19,25 @@ app.use(express.json());
 app.use(compression());
 app.use(helmet());
 app.use(morgan('dev'));
-app.use(express.static('public'))
-app.use('/storage', express.static('storage/app'))
+app.use(express.static('public'));
+app.use('/storage', express.static('storage/app'));
 
 if (process.env.NODE_ENV !== 'test') {
-  app.listen(port,()=>{
-    console.log("server listening to",port)
-  })
+  app.listen(port, () => {
+    console.log('server listening to', port);
+  });
 }
 
-require('./app/routes')(app);
-
+require('./routes')(app);
 
 //global error handle
 app.use(function (err, req, res, next) {
-  const isProd = process.env.NODE_ENV === 'production'
-  console.error(err)
-  let message = isProd ? 'Internal server error' : err.message
+  const isProd = process.env.NODE_ENV === 'production';
+  console.error(err);
+  let message = isProd ? 'Internal server error' : err.message;
   return res.status(500).send({
     message: message,
-  })
-})
-
-
+  });
+});
 
 module.exports = app;

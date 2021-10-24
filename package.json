@@ -6,8 +6,8 @@
   "scripts": {
     "test": "jest",
     "test-watch": "jest --runInBand --watch ",
-    "start": "node ./app/app.js",
-    "dev": "nodemon ./app/app.js",
+    "start": "node ./app/server.js",
+    "dev": "nodemon ./app/server.js",
     "lint": "eslint --ignore-path .gitignore  --ext .js,.ts,.tsx .",
     "lint:fix": "eslint --ignore-path .gitignore  --ext .js,.ts,.tsx --fix .",
     "format": "pretty-quick --ignore-path .gitignore --pattern \"**/*.+(js|jsx|tsx)\"",
