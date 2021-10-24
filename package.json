@@ -48,7 +48,8 @@
     "eslint-config-prettier": "^8.3.0",
     "jest": "^27.0.6",
     "nodemon": "^2.0.12",
-    "prettier": "2.3.2",
+    "prettier": "^2.3.2",
+    "pretty-quick": "^3.1.1",
     "sequelize-cli": "^6.2.0",
     "supertest": "^6.1.3"
   }
